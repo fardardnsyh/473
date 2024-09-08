@@ -1,0 +1,138 @@
+---
+import Play from "../assets/images/play.png";
+import Badge from "../components/ui/Badge.astro";
+import { Image } from "astro:assets"
+import rohit from "../assets/images/rohit.webp"
+const mainStacks = [
+  "Javascript",
+  "Typescript",
+  "NextJS",
+  "Astro",
+  "Sveltekit",
+  "TailwindCSS",
+  "MongoDB",
+  "Firebase",
+  "GSAP",
+  "Redux",
+  "Git",
+  "Figma",
+];
+
+const knowledge = [
+  "Frontend Development",
+  "Backend Development",
+  "Fullstack Development",
+  "UI/UX Design",
+  "Responsive Design",
+  "SEO",
+  "Web Performance",
+  "Web Accessibility",
+  "Progressive Web Apps",
+  "Cloud Computing",
+];
+
+const languages = ["Hindi", "English"];
+---
+
+<section class="my-52 2xl:w-11/12 lg:px-16 px-8 mx-auto font-poppins">
+  <div class="mb-8 flex gap-8 sm:flex-row flex-col-reverse">
+    <div
+      class="about-1 border border-white/5 bg-white/5 mx-auto pt-10 pb-8 overflow-hidden rounded-[25px] relative px-8"
+    >
+      <div
+        class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
+      >
+      </div>
+      <div>
+        <div class="text-white font-semibold text-5xl font-poppins">
+          Rohit Kushwaha
+        </div>
+        <b
+          class="text-2xl font-poppins text-transparent bg-clip-text bg-[linear-gradient(90deg,#00C9FF_0%,#92FE9D_100%)] font-bold"
+        >
+          Full Stack Developer
+        </b>
+        <div>
+          <p class="text-white/50 mt-4 text-lg font-poppins">
+            <!-- I'm a dedicated Full Stack Developer based in India, specializing in developing complex, scalable web applications. With a deep understanding of both front-end and back-end technologies, I am able to craft robust solutions from the ground up - from database design to user interface development. I have a particular passion for creating dynamic user experiences, utilizing UI effects and animations to bring designs to life. My goal is to build intuitive, efficient, and impactful digital experiences. Let's collaborate and create something exceptional. -->
+            Hi, I'm Rohit Kushwaha, a passionate Full Stack Developer with expertise
+            in cutting-edge web technologies. Currently pursuing a BSc in Computer
+            Science, I bring a dynamic blend of theoretical knowledge and hands-on
+            experience to the world of software development.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about-1-image">
+      <Image
+        class="rounded-[25px]"
+        src={rohit}
+        alt="Rohit Kushwaha"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      class="border border-white/5 bg-white/5 mx-auto pt-10 pb-8 overflow-hidden rounded-[25px] relative px-8"
+    >
+      <div
+        class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
+      >
+      </div>
+      <div>
+        <div class="text-white font-semibold text-3xl font-poppins">
+          My Skills
+        </div>
+        <div class="flex flex-wrap gap-4 mt-4">
+         {mainStacks.map((stack) => (
+            <p class=" text-white/50">{stack}</p>
+          ))}
+        </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import("gsap").then((gsap) => {
+    gsap.gsap.fromTo(
+      ".about-1",
+      {
+        x: "-100px",
+        autoAlpha: 0,
+      },
+      {
+        autoAlpha: 1,
+        x: 0,
+        duration: 1,
+        overflow: "hidden",
+        scrollTrigger: {
+          trigger: ".about-1",
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+    gsap.gsap.fromTo(
+      ".about-1-image",
+      {
+        x: "100px",
+        autoAlpha: 0,
+      },
+      {
+        autoAlpha: 1,
+        x: 0,
+        duration: 1,
+        overflow: "hidden",
+        scrollTrigger: {
+          trigger: ".about-1",
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+  });
+</script>
